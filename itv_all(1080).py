@@ -320,7 +320,7 @@ def channel_key(channel_name):
 results.sort(key=lambda x: (x[0], -float(x[2].split()[0])))
 results.sort(key=lambda x: channel_key(x[0]))
 
-result_counter = 1  # 每个频道需要的个数
+result_counter = 8  # 每个频道需要的个数
 
 with open("itvlist.txt", 'w', encoding='utf-8') as file:
     channel_counters = {}
@@ -415,4 +415,3 @@ with open("itvlist.m3u", 'w', encoding='utf-8') as file:
                 file.write(f"#EXTINF:-1 group-title=\"其他频道\",{channel_name}\n")
                 file.write(f"{channel_url}\n")
                 channel_counters[channel_name] = 1
-
